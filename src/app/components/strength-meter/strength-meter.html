@@ -1,0 +1,13 @@
+@if (strength()) {
+<div class="meter" [style.--bar-color]="barColor()">
+    <div class="labels">
+        <span class="label">Strength</span>
+        <span class="level" [ngClass]="strength()!">{{ label() }}</span>
+    </div>
+    <div class="bars">
+        @for (bar of bars; track bar) {
+        <div class="bar" [ngClass]="{ filled: bar <= filled() }"></div>
+        }
+    </div>
+</div>
+}

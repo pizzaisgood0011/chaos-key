@@ -1,1 +1,73 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+  --lime:          #aaff00;
+  --lime-dark:     #7acc00;
+  --lime-dim:      #1a2d00;
+  --orange:        #ff6a00;
+  --yellow:        #ffdd00;
+  --surface:       #0d1200;
+  --surface-alt:   #111800;
+  --surface-panel: #0a1000;
+  --border:        #aaff00;
+  --border-dim:    #2a3d00;
+  --text-primary:  #d4f0a0;
+  --text-bright:   #aaff00;
+  --text-muted:    #6a8a30;
+  --text-faint:    #3a5010;
+  --red:           #ff3333;
+  --amber:         #ffaa00;
+  --green:         #00ff88;
+  --radius:        0px;
+  --radius-sm:     0px;
+  --shadow:        4px 4px 0px var(--lime);
+  --shadow-sm:     2px 2px 0px var(--lime);
+  --border-width:  2px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  background-color: #0a1a0a;
+  background-image:
+    linear-gradient(
+      rgba(0, 255, 70, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 255, 70, 0.07) 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      ellipse at 50% 40%,
+      rgba(0, 255, 70, 0.08) 0%,
+      transparent 70%
+    );
+  background-size: 32px 32px, 32px 32px, 100% 100%;
+  color: var(--text-primary);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+::selection {
+  background: var(--lime);
+  color: #000;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--lime-dark);
+  border: 1px solid var(--lime);
+}

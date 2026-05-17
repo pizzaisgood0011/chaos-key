@@ -1,0 +1,36 @@
+<div class="settings-card">
+
+    <!-- Length -->
+    <div class="field">
+        <div class="field__header">
+            <label class="field__label" for="length-slider">Length</label>
+            <span class="field__value">{{ options().length }}</span>
+        </div>
+        <input id="length-slider" type="range" min="8" max="64" step="1" [value]="options().length"
+            (input)="onLengthChange(+$any($event.target).value)" class="slider" />
+        <div class="slider-ticks">
+            <span>8</span>
+            <span>64</span>
+        </div>
+    </div>
+
+    <!-- Character types -->
+    <div class="field">
+        <span class="field__label">Character types</span>
+        <div class="char-grid">
+            @for (type of charTypes; track type.key) {
+            <label class="char-option" [class.char-option--active]="options()[type.key]">
+                <input type="checkbox" [checked]="options()[type.key]"
+                    (change)="onTypeChange(type.key, $any($event.target).checked)" />
+                <span class="char-option__label">{{ type.label }}</span>
+                <span class="char-option__example">{{ type.example }}</span>
+            </label>
+            }
+        </div>
+
+        @if (activeCount === 0) {
+        <p class="error">⚠ Select at least one character type</p>
+        }
+    </div>
+
+</div>

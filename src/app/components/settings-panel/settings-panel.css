@@ -1,0 +1,126 @@
+.settings-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.1rem 1rem;
+  margin-top: 20px;
+  background: var(--surface-panel);
+  border: 2px solid var(--lime);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.settings-card::before {
+  content: '[ SETTINGS ]';
+  position: absolute;
+  top: -11px;
+  left: 10px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--lime);
+  background: var(--surface-panel);
+  padding: 0 6px;
+  letter-spacing: 1px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.field__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.field__label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--lime);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.field__value {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 10px;
+  color: #000;
+  background: var(--lime);
+  padding: 3px 10px;
+  min-width: 44px;
+  text-align: center;
+}
+
+.slider {
+  width: 100%;
+  accent-color: var(--lime);
+  cursor: pointer;
+}
+
+.slider-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: var(--text-faint);
+  margin-top: -4px;
+}
+
+.char-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.char-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 2px solid var(--border-dim);
+  background: var(--surface-alt);
+  cursor: pointer;
+  transition: border-color 0.1s, background 0.1s, box-shadow 0.1s;
+  user-select: none;
+}
+
+.char-option:hover {
+  border-color: var(--lime);
+  background: var(--lime-dim);
+}
+
+.char-option input[type='checkbox'] {
+  accent-color: var(--lime);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.char-option.char-option--active {
+  border-color: var(--lime);
+  background: var(--lime-dim);
+  box-shadow: inset 0 0 8px rgba(170, 255, 0, 0.15);
+}
+
+.char-option__label {
+  flex: 1;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  color: var(--text-primary);
+}
+
+.char-option__example {
+  font-family: 'VT323', monospace;
+  font-size: 17px;
+  color: var(--text-muted);
+}
+
+.error {
+  font-family: 'VT323', monospace;
+  font-size: 16px;
+  color: var(--red);
+  text-shadow: 0 0 6px rgba(255, 51, 51, 0.5);
+  margin: 0;
+}

@@ -1,0 +1,86 @@
+.meter {
+  padding: 12px 14px;
+  margin-top: 20px;
+  background: var(--surface-panel);
+  border: 2px solid var(--lime);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.meter::before {
+  content: '[ STRENGTH ]';
+  position: absolute;
+  top: -11px;
+  left: 10px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--lime);
+  background: var(--surface-panel);
+  padding: 0 6px;
+  letter-spacing: 1px;
+}
+
+.labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+.level {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  padding: 4px 10px;
+  letter-spacing: 1px;
+  border: 2px solid currentColor;
+}
+
+.level.weak {
+  color: var(--red);
+  background: rgba(255, 51, 51, 0.1);
+  text-shadow: 0 0 6px var(--red);
+}
+
+.level.medium {
+  color: var(--amber);
+  background: rgba(255, 170, 0, 0.1);
+  text-shadow: 0 0 6px var(--amber);
+}
+
+.level.strong {
+  color: var(--green);
+  background: rgba(0, 255, 136, 0.1);
+  text-shadow: 0 0 6px var(--green);
+}
+
+.level.very-strong {
+  color: var(--lime);
+  background: rgba(170, 255, 0, 0.1);
+  text-shadow: 0 0 8px var(--lime);
+}
+
+.bars {
+  display: flex;
+  gap: 6px;
+}
+
+.bar {
+  flex: 1;
+  height: 12px;
+  border: 2px solid var(--border-dim);
+  background: var(--surface-alt);
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.bar.filled {
+  background: var(--bar-color, var(--lime));
+  border-color: var(--bar-color, var(--lime));
+  box-shadow: 0 0 6px var(--bar-color, var(--lime));
+}
